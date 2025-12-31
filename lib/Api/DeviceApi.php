@@ -116,6 +116,275 @@ class DeviceApi
     }
 
     /**
+     * Operation createExchangeCode
+     *
+     * 创建iOS设备证书兑换码
+     *
+     * @param  \OpenAPI\Client\Model\CertificateCode $request request (required)
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \OpenAPI\Client\Model\ResponseOfCertificateCode
+     */
+    public function createExchangeCode($request)
+    {
+        list($response) = $this->createExchangeCodeWithHttpInfo($request);
+        return $response;
+    }
+
+    /**
+     * Operation createExchangeCodeWithHttpInfo
+     *
+     * 创建iOS设备证书兑换码
+     *
+     * @param  \OpenAPI\Client\Model\CertificateCode $request request (required)
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \OpenAPI\Client\Model\ResponseOfCertificateCode, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function createExchangeCodeWithHttpInfo($request)
+    {
+        $request = $this->createExchangeCodeRequest($request);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 200:
+                    if ('\OpenAPI\Client\Model\ResponseOfCertificateCode' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ResponseOfCertificateCode', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\OpenAPI\Client\Model\ResponseOfCertificateCode';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = (string) $responseBody;
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\ResponseOfCertificateCode',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation createExchangeCodeAsync
+     *
+     * 创建iOS设备证书兑换码
+     *
+     * @param  \OpenAPI\Client\Model\CertificateCode $request request (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createExchangeCodeAsync($request)
+    {
+        return $this->createExchangeCodeAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation createExchangeCodeAsyncWithHttpInfo
+     *
+     * 创建iOS设备证书兑换码
+     *
+     * @param  \OpenAPI\Client\Model\CertificateCode $request request (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createExchangeCodeAsyncWithHttpInfo($request)
+    {
+        $returnType = '\OpenAPI\Client\Model\ResponseOfCertificateCode';
+        $request = $this->createExchangeCodeRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'createExchangeCode'
+     *
+     * @param  \OpenAPI\Client\Model\CertificateCode $request request (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function createExchangeCodeRequest($request)
+    {
+        // verify the required parameter 'request' is set
+        if ($request === null || (is_array($request) && count($request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $request when calling createExchangeCode'
+            );
+        }
+
+        $resourcePath = '/aas/api/v1/exchange/code';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['*/*']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['*/*'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($request)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($request));
+            } else {
+                $httpBody = $request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation getCertificate
      *
      * 获取iOS设备证书
@@ -124,7 +393,7 @@ class DeviceApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\OutResponseOfPersonalCertificate
+     * @return \OpenAPI\Client\Model\ResponseOfPersonalCertificate
      */
     public function getCertificate($udid)
     {
@@ -141,7 +410,7 @@ class DeviceApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\OutResponseOfPersonalCertificate, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\ResponseOfPersonalCertificate, HTTP status code, HTTP response headers (array of strings)
      */
     public function getCertificateWithHttpInfo($udid)
     {
@@ -178,20 +447,20 @@ class DeviceApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\OutResponseOfPersonalCertificate' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ResponseOfPersonalCertificate' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\OutResponseOfPersonalCertificate', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ResponseOfPersonalCertificate', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\OutResponseOfPersonalCertificate';
+            $returnType = '\OpenAPI\Client\Model\ResponseOfPersonalCertificate';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -210,7 +479,7 @@ class DeviceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\OutResponseOfPersonalCertificate',
+                        '\OpenAPI\Client\Model\ResponseOfPersonalCertificate',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -252,7 +521,7 @@ class DeviceApi
      */
     public function getCertificateAsyncWithHttpInfo($udid)
     {
-        $returnType = '\OpenAPI\Client\Model\OutResponseOfPersonalCertificate';
+        $returnType = '\OpenAPI\Client\Model\ResponseOfPersonalCertificate';
         $request = $this->getCertificateRequest($udid);
 
         return $this->client
@@ -395,7 +664,7 @@ class DeviceApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\OutResponseOfListOfPersonalCertificate
+     * @return \OpenAPI\Client\Model\ResponseOfListOfPersonalCertificate
      */
     public function getCertificates($limit, $page, $asc = null)
     {
@@ -414,7 +683,7 @@ class DeviceApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\OutResponseOfListOfPersonalCertificate, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\ResponseOfListOfPersonalCertificate, HTTP status code, HTTP response headers (array of strings)
      */
     public function getCertificatesWithHttpInfo($limit, $page, $asc = null)
     {
@@ -451,20 +720,20 @@ class DeviceApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\OutResponseOfListOfPersonalCertificate' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ResponseOfListOfPersonalCertificate' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\OutResponseOfListOfPersonalCertificate', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ResponseOfListOfPersonalCertificate', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\OutResponseOfListOfPersonalCertificate';
+            $returnType = '\OpenAPI\Client\Model\ResponseOfListOfPersonalCertificate';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -483,7 +752,7 @@ class DeviceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\OutResponseOfListOfPersonalCertificate',
+                        '\OpenAPI\Client\Model\ResponseOfListOfPersonalCertificate',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -529,7 +798,7 @@ class DeviceApi
      */
     public function getCertificatesAsyncWithHttpInfo($limit, $page, $asc = null)
     {
-        $returnType = '\OpenAPI\Client\Model\OutResponseOfListOfPersonalCertificate';
+        $returnType = '\OpenAPI\Client\Model\ResponseOfListOfPersonalCertificate';
         $request = $this->getCertificatesRequest($limit, $page, $asc);
 
         return $this->client
@@ -692,7 +961,7 @@ class DeviceApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\OutResponseOfStatus
+     * @return \OpenAPI\Client\Model\ResponseOfStatus
      */
     public function getStatus()
     {
@@ -708,7 +977,7 @@ class DeviceApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\OutResponseOfStatus, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\ResponseOfStatus, HTTP status code, HTTP response headers (array of strings)
      */
     public function getStatusWithHttpInfo()
     {
@@ -745,20 +1014,20 @@ class DeviceApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\OutResponseOfStatus' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ResponseOfStatus' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\OutResponseOfStatus', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ResponseOfStatus', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\OutResponseOfStatus';
+            $returnType = '\OpenAPI\Client\Model\ResponseOfStatus';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -777,7 +1046,7 @@ class DeviceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\OutResponseOfStatus',
+                        '\OpenAPI\Client\Model\ResponseOfStatus',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -817,7 +1086,7 @@ class DeviceApi
      */
     public function getStatusAsyncWithHttpInfo()
     {
-        $returnType = '\OpenAPI\Client\Model\OutResponseOfStatus';
+        $returnType = '\OpenAPI\Client\Model\ResponseOfStatus';
         $request = $this->getStatusRequest();
 
         return $this->client
@@ -945,7 +1214,7 @@ class DeviceApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\OutResponseOfPersonalCertificate
+     * @return \OpenAPI\Client\Model\ResponseOfPersonalCertificate
      */
     public function register($request)
     {
@@ -962,7 +1231,7 @@ class DeviceApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\OutResponseOfPersonalCertificate, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\ResponseOfPersonalCertificate, HTTP status code, HTTP response headers (array of strings)
      */
     public function registerWithHttpInfo($request)
     {
@@ -999,20 +1268,20 @@ class DeviceApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\OutResponseOfPersonalCertificate' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ResponseOfPersonalCertificate' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\OutResponseOfPersonalCertificate', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ResponseOfPersonalCertificate', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\OutResponseOfPersonalCertificate';
+            $returnType = '\OpenAPI\Client\Model\ResponseOfPersonalCertificate';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -1031,7 +1300,7 @@ class DeviceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\OutResponseOfPersonalCertificate',
+                        '\OpenAPI\Client\Model\ResponseOfPersonalCertificate',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1073,7 +1342,7 @@ class DeviceApi
      */
     public function registerAsyncWithHttpInfo($request)
     {
-        $returnType = '\OpenAPI\Client\Model\OutResponseOfPersonalCertificate';
+        $returnType = '\OpenAPI\Client\Model\ResponseOfPersonalCertificate';
         $request = $this->registerRequest($request);
 
         return $this->client
@@ -1214,7 +1483,7 @@ class DeviceApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\OutResponseOfstring
+     * @return \OpenAPI\Client\Model\ResponseOfstring
      */
     public function registers($device_requests)
     {
@@ -1231,7 +1500,7 @@ class DeviceApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\OutResponseOfstring, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\ResponseOfstring, HTTP status code, HTTP response headers (array of strings)
      */
     public function registersWithHttpInfo($device_requests)
     {
@@ -1268,20 +1537,20 @@ class DeviceApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\OutResponseOfstring' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ResponseOfstring' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\OutResponseOfstring', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ResponseOfstring', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\OutResponseOfstring';
+            $returnType = '\OpenAPI\Client\Model\ResponseOfstring';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -1300,7 +1569,7 @@ class DeviceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\OutResponseOfstring',
+                        '\OpenAPI\Client\Model\ResponseOfstring',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1342,7 +1611,7 @@ class DeviceApi
      */
     public function registersAsyncWithHttpInfo($device_requests)
     {
-        $returnType = '\OpenAPI\Client\Model\OutResponseOfstring';
+        $returnType = '\OpenAPI\Client\Model\ResponseOfstring';
         $request = $this->registersRequest($device_requests);
 
         return $this->client

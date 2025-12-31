@@ -10,7 +10,7 @@ Method | HTTP request | Description
 ## `getBalance()`
 
 ```php
-getBalance(): \OpenAPI\Client\Model\OutResponseOfBalance
+getBalance(): \OpenAPI\Client\Model\ResponseOfBalance
 ```
 
 获取用户余额
@@ -49,7 +49,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenAPI\Client\Model\OutResponseOfBalance**](../Model/OutResponseOfBalance.md)
+[**\OpenAPI\Client\Model\ResponseOfBalance**](../Model/ResponseOfBalance.md)
 
 ### Authorization
 

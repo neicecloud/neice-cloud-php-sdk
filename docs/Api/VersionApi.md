@@ -10,7 +10,7 @@ Method | HTTP request | Description
 ## `getVersion()`
 
 ```php
-getVersion(): \OpenAPI\Client\Model\OutResponseOfVersion
+getVersion(): \OpenAPI\Client\Model\ResponseOfVersion
 ```
 
 获取接口系统版本
@@ -49,7 +49,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenAPI\Client\Model\OutResponseOfVersion**](../Model/OutResponseOfVersion.md)
+[**\OpenAPI\Client\Model\ResponseOfVersion**](../Model/ResponseOfVersion.md)
 
 ### Authorization
 

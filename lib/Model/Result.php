@@ -1,6 +1,6 @@
 <?php
 /**
- * OutResponseOfListOfPersonalCertificate
+ * Result
  *
  * PHP version 7.2
  *
@@ -33,7 +33,7 @@ use \ArrayAccess;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
- * OutResponseOfListOfPersonalCertificate Class Doc Comment
+ * Result Class Doc Comment
  *
  * @category Class
  * @package  OpenAPI\Client
@@ -43,7 +43,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null  
  */
-class OutResponseOfListOfPersonalCertificate implements ModelInterface, ArrayAccess, \JsonSerializable
+class Result implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -52,7 +52,7 @@ class OutResponseOfListOfPersonalCertificate implements ModelInterface, ArrayAcc
       *
       * @var string
       */
-    protected static $openAPIModelName = 'OutResponseOfListOfPersonalCertificate';
+    protected static $openAPIModelName = 'Result';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -60,10 +60,7 @@ class OutResponseOfListOfPersonalCertificate implements ModelInterface, ArrayAcc
       * @var string[]
       */
     protected static $openAPITypes = [
-        'code' => 'int',
-        'data' => '\OpenAPI\Client\Model\PersonalCertificate[]',
-        'msg' => 'string',
-        'success' => 'bool'
+        'type' => 'string'
     ];
 
     /**
@@ -74,10 +71,7 @@ class OutResponseOfListOfPersonalCertificate implements ModelInterface, ArrayAcc
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'code' => 'int32',
-        'data' => null,
-        'msg' => null,
-        'success' => null
+        'type' => null
     ];
 
     /**
@@ -107,10 +101,7 @@ class OutResponseOfListOfPersonalCertificate implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $attributeMap = [
-        'code' => 'code',
-        'data' => 'data',
-        'msg' => 'msg',
-        'success' => 'success'
+        'type' => 'type'
     ];
 
     /**
@@ -119,10 +110,7 @@ class OutResponseOfListOfPersonalCertificate implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $setters = [
-        'code' => 'setCode',
-        'data' => 'setData',
-        'msg' => 'setMsg',
-        'success' => 'setSuccess'
+        'type' => 'setType'
     ];
 
     /**
@@ -131,10 +119,7 @@ class OutResponseOfListOfPersonalCertificate implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $getters = [
-        'code' => 'getCode',
-        'data' => 'getData',
-        'msg' => 'getMsg',
-        'success' => 'getSuccess'
+        'type' => 'getType'
     ];
 
     /**
@@ -197,10 +182,7 @@ class OutResponseOfListOfPersonalCertificate implements ModelInterface, ArrayAcc
      */
     public function __construct(array $data = null)
     {
-        $this->container['code'] = $data['code'] ?? null;
-        $this->container['data'] = $data['data'] ?? null;
-        $this->container['msg'] = $data['msg'] ?? null;
-        $this->container['success'] = $data['success'] ?? null;
+        $this->container['type'] = $data['type'] ?? null;
     }
 
     /**
@@ -228,97 +210,25 @@ class OutResponseOfListOfPersonalCertificate implements ModelInterface, ArrayAcc
 
 
     /**
-     * Gets code
-     *
-     * @return int|null
-     */
-    public function getCode()
-    {
-        return $this->container['code'];
-    }
-
-    /**
-     * Sets code
-     *
-     * @param int|null $code code
-     *
-     * @return self
-     */
-    public function setCode($code)
-    {
-        $this->container['code'] = $code;
-
-        return $this;
-    }
-
-    /**
-     * Gets data
-     *
-     * @return \OpenAPI\Client\Model\PersonalCertificate[]|null
-     */
-    public function getData()
-    {
-        return $this->container['data'];
-    }
-
-    /**
-     * Sets data
-     *
-     * @param \OpenAPI\Client\Model\PersonalCertificate[]|null $data data
-     *
-     * @return self
-     */
-    public function setData($data)
-    {
-        $this->container['data'] = $data;
-
-        return $this;
-    }
-
-    /**
-     * Gets msg
+     * Gets type
      *
      * @return string|null
      */
-    public function getMsg()
+    public function getType()
     {
-        return $this->container['msg'];
+        return $this->container['type'];
     }
 
     /**
-     * Sets msg
+     * Sets type
      *
-     * @param string|null $msg msg
+     * @param string|null $type type
      *
      * @return self
      */
-    public function setMsg($msg)
+    public function setType($type)
     {
-        $this->container['msg'] = $msg;
-
-        return $this;
-    }
-
-    /**
-     * Gets success
-     *
-     * @return bool|null
-     */
-    public function getSuccess()
-    {
-        return $this->container['success'];
-    }
-
-    /**
-     * Sets success
-     *
-     * @param bool|null $success success
-     *
-     * @return self
-     */
-    public function setSuccess($success)
-    {
-        $this->container['success'] = $success;
+        $this->container['type'] = $type;
 
         return $this;
     }

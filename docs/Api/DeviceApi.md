@@ -4,6 +4,7 @@ All URIs are relative to https://neice.cloud.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**createExchangeCode()**](DeviceApi.md#createExchangeCode) | **POST** /aas/api/v1/exchange/code | 创建iOS设备证书兑换码
 [**getCertificate()**](DeviceApi.md#getCertificate) | **POST** /aas/api/v1/certificate | 获取iOS设备证书
 [**getCertificates()**](DeviceApi.md#getCertificates) | **POST** /aas/api/v1/certificates | 获取iOS设备证书列表
 [**getStatus()**](DeviceApi.md#getStatus) | **POST** /aas/api/v1/status | 获取证书支持类型
@@ -11,10 +12,70 @@ Method | HTTP request | Description
 [**registers()**](DeviceApi.md#registers) | **POST** /aas/api/v1/registers | iOS设备批量提交注册
 
 
+## `createExchangeCode()`
+
+```php
+createExchangeCode($request): \OpenAPI\Client\Model\ResponseOfCertificateCode
+```
+
+创建iOS设备证书兑换码
+
+创建iOS设备证书兑换码
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure OAuth2 access token for authorization: Authorization
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new OpenAPI\Client\Api\DeviceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$request = new \OpenAPI\Client\Model\CertificateCode(); // \OpenAPI\Client\Model\CertificateCode | request
+
+try {
+    $result = $apiInstance->createExchangeCode($request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DeviceApi->createExchangeCode: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**\OpenAPI\Client\Model\CertificateCode**](../Model/CertificateCode.md)| request |
+
+### Return type
+
+[**\OpenAPI\Client\Model\ResponseOfCertificateCode**](../Model/ResponseOfCertificateCode.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `*/*`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `getCertificate()`
 
 ```php
-getCertificate($udid): \OpenAPI\Client\Model\OutResponseOfPersonalCertificate
+getCertificate($udid): \OpenAPI\Client\Model\ResponseOfPersonalCertificate
 ```
 
 获取iOS设备证书
@@ -56,7 +117,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\OpenAPI\Client\Model\OutResponseOfPersonalCertificate**](../Model/OutResponseOfPersonalCertificate.md)
+[**\OpenAPI\Client\Model\ResponseOfPersonalCertificate**](../Model/ResponseOfPersonalCertificate.md)
 
 ### Authorization
 
@@ -74,7 +135,7 @@ Name | Type | Description  | Notes
 ## `getCertificates()`
 
 ```php
-getCertificates($limit, $page, $asc): \OpenAPI\Client\Model\OutResponseOfListOfPersonalCertificate
+getCertificates($limit, $page, $asc): \OpenAPI\Client\Model\ResponseOfListOfPersonalCertificate
 ```
 
 获取iOS设备证书列表
@@ -120,7 +181,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\OpenAPI\Client\Model\OutResponseOfListOfPersonalCertificate**](../Model/OutResponseOfListOfPersonalCertificate.md)
+[**\OpenAPI\Client\Model\ResponseOfListOfPersonalCertificate**](../Model/ResponseOfListOfPersonalCertificate.md)
 
 ### Authorization
 
@@ -138,7 +199,7 @@ Name | Type | Description  | Notes
 ## `getStatus()`
 
 ```php
-getStatus(): \OpenAPI\Client\Model\OutResponseOfStatus
+getStatus(): \OpenAPI\Client\Model\ResponseOfStatus
 ```
 
 获取证书支持类型
@@ -177,7 +238,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenAPI\Client\Model\OutResponseOfStatus**](../Model/OutResponseOfStatus.md)
+[**\OpenAPI\Client\Model\ResponseOfStatus**](../Model/ResponseOfStatus.md)
 
 ### Authorization
 
@@ -195,7 +256,7 @@ This endpoint does not need any parameter.
 ## `register()`
 
 ```php
-register($request): \OpenAPI\Client\Model\OutResponseOfPersonalCertificate
+register($request): \OpenAPI\Client\Model\ResponseOfPersonalCertificate
 ```
 
 iOS设备注册
@@ -237,7 +298,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\OpenAPI\Client\Model\OutResponseOfPersonalCertificate**](../Model/OutResponseOfPersonalCertificate.md)
+[**\OpenAPI\Client\Model\ResponseOfPersonalCertificate**](../Model/ResponseOfPersonalCertificate.md)
 
 ### Authorization
 
@@ -255,7 +316,7 @@ Name | Type | Description  | Notes
 ## `registers()`
 
 ```php
-registers($device_requests): \OpenAPI\Client\Model\OutResponseOfstring
+registers($device_requests): \OpenAPI\Client\Model\ResponseOfstring
 ```
 
 iOS设备批量提交注册
@@ -297,7 +358,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\OpenAPI\Client\Model\OutResponseOfstring**](../Model/OutResponseOfstring.md)
+[**\OpenAPI\Client\Model\ResponseOfstring**](../Model/ResponseOfstring.md)
 
 ### Authorization
 

@@ -73,6 +73,18 @@ class DeviceApiTest extends TestCase
     }
 
     /**
+     * Test case for createExchangeCode
+     *
+     * 创建iOS设备证书兑换码.
+     *
+     */
+    public function testCreateExchangeCode()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for getCertificate
      *
      * 获取iOS设备证书.

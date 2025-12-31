@@ -70,7 +70,7 @@ No authorization required
 ## `getUserInfo()`
 
 ```php
-getUserInfo(): \OpenAPI\Client\Model\HttpEntity
+getUserInfo(): object
 ```
 
 获取用户信息
@@ -109,7 +109,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenAPI\Client\Model\HttpEntity**](../Model/HttpEntity.md)
+**object**
 
 ### Authorization
 
@@ -127,7 +127,7 @@ This endpoint does not need any parameter.
 ## `getUserInfo1()`
 
 ```php
-getUserInfo1(): \OpenAPI\Client\Model\HttpEntity
+getUserInfo1(): object
 ```
 
 获取用户信息
@@ -166,7 +166,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenAPI\Client\Model\HttpEntity**](../Model/HttpEntity.md)
+**object**
 
 ### Authorization
 

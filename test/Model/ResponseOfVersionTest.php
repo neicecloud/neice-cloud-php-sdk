@@ -1,6 +1,6 @@
 <?php
 /**
- * OutResponseOfVersionTest
+ * ResponseOfVersionTest
  *
  * PHP version 7.2
  *
@@ -32,15 +32,15 @@ namespace OpenAPI\Client\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * OutResponseOfVersionTest Class Doc Comment
+ * ResponseOfVersionTest Class Doc Comment
  *
  * @category    Class
- * @description OutResponseOfVersion
+ * @description ResponseOfVersion
  * @package     OpenAPI\Client
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class OutResponseOfVersionTest extends TestCase
+class ResponseOfVersionTest extends TestCase
 {
 
     /**
@@ -72,9 +72,36 @@ class OutResponseOfVersionTest extends TestCase
     }
 
     /**
-     * Test "OutResponseOfVersion"
+     * Test "ResponseOfVersion"
      */
-    public function testOutResponseOfVersion()
+    public function testResponseOfVersion()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "action"
+     */
+    public function testPropertyAction()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "algorithm"
+     */
+    public function testPropertyAlgorithm()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "ciphertext"
+     */
+    public function testPropertyCiphertext()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -99,9 +126,36 @@ class OutResponseOfVersionTest extends TestCase
     }
 
     /**
+     * Test attribute "error"
+     */
+    public function testPropertyError()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "msg"
      */
     public function testPropertyMsg()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "result"
+     */
+    public function testPropertyResult()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "session"
+     */
+    public function testPropertySession()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

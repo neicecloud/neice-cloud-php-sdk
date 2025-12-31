@@ -76,6 +76,7 @@ All URIs are relative to *https://neice.cloud*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *BalanceApi* | [**getBalance**](docs/Api/BalanceApi.md#getbalance) | **POST** /user/api/v1/balance | 获取用户余额
+*DeviceApi* | [**createExchangeCode**](docs/Api/DeviceApi.md#createexchangecode) | **POST** /aas/api/v1/exchange/code | 创建iOS设备证书兑换码
 *DeviceApi* | [**getCertificate**](docs/Api/DeviceApi.md#getcertificate) | **POST** /aas/api/v1/certificate | 获取iOS设备证书
 *DeviceApi* | [**getCertificates**](docs/Api/DeviceApi.md#getcertificates) | **POST** /aas/api/v1/certificates | 获取iOS设备证书列表
 *DeviceApi* | [**getStatus**](docs/Api/DeviceApi.md#getstatus) | **POST** /aas/api/v1/status | 获取证书支持类型
@@ -90,16 +91,18 @@ Class | Method | HTTP request | Description
 ## Models
 
 - [Balance](docs/Model/Balance.md)
+- [CertificateCode](docs/Model/CertificateCode.md)
 - [DeviceRequest](docs/Model/DeviceRequest.md)
 - [Endpoint](docs/Model/Endpoint.md)
-- [HttpEntity](docs/Model/HttpEntity.md)
-- [OutResponseOfBalance](docs/Model/OutResponseOfBalance.md)
-- [OutResponseOfListOfPersonalCertificate](docs/Model/OutResponseOfListOfPersonalCertificate.md)
-- [OutResponseOfPersonalCertificate](docs/Model/OutResponseOfPersonalCertificate.md)
-- [OutResponseOfStatus](docs/Model/OutResponseOfStatus.md)
-- [OutResponseOfVersion](docs/Model/OutResponseOfVersion.md)
-- [OutResponseOfstring](docs/Model/OutResponseOfstring.md)
 - [PersonalCertificate](docs/Model/PersonalCertificate.md)
+- [ResponseOfBalance](docs/Model/ResponseOfBalance.md)
+- [ResponseOfCertificateCode](docs/Model/ResponseOfCertificateCode.md)
+- [ResponseOfListOfPersonalCertificate](docs/Model/ResponseOfListOfPersonalCertificate.md)
+- [ResponseOfPersonalCertificate](docs/Model/ResponseOfPersonalCertificate.md)
+- [ResponseOfStatus](docs/Model/ResponseOfStatus.md)
+- [ResponseOfVersion](docs/Model/ResponseOfVersion.md)
+- [ResponseOfstring](docs/Model/ResponseOfstring.md)
+- [Result](docs/Model/Result.md)
 - [Status](docs/Model/Status.md)
 - [Version](docs/Model/Version.md)
 

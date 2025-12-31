@@ -123,7 +123,7 @@ class VersionApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\OutResponseOfVersion
+     * @return \OpenAPI\Client\Model\ResponseOfVersion
      */
     public function getVersion()
     {
@@ -139,7 +139,7 @@ class VersionApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\OutResponseOfVersion, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\ResponseOfVersion, HTTP status code, HTTP response headers (array of strings)
      */
     public function getVersionWithHttpInfo()
     {
@@ -176,20 +176,20 @@ class VersionApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\OutResponseOfVersion' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ResponseOfVersion' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\OutResponseOfVersion', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ResponseOfVersion', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\OutResponseOfVersion';
+            $returnType = '\OpenAPI\Client\Model\ResponseOfVersion';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -208,7 +208,7 @@ class VersionApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\OutResponseOfVersion',
+                        '\OpenAPI\Client\Model\ResponseOfVersion',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -248,7 +248,7 @@ class VersionApi
      */
     public function getVersionAsyncWithHttpInfo()
     {
-        $returnType = '\OpenAPI\Client\Model\OutResponseOfVersion';
+        $returnType = '\OpenAPI\Client\Model\ResponseOfVersion';
         $request = $this->getVersionRequest();
 
         return $this->client

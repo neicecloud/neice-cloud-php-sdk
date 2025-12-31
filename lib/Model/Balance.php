@@ -60,8 +60,12 @@ class Balance implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
+        'algorithm' => 'string',
         'balance' => 'float',
+        'ciphertext' => 'string',
+        'escrow' => 'float',
         'reward' => 'float',
+        'session' => 'string',
         'total' => 'float',
         'user_uuid' => 'string',
         'voucher' => 'float'
@@ -75,8 +79,12 @@ class Balance implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'algorithm' => null,
         'balance' => null,
+        'ciphertext' => null,
+        'escrow' => null,
         'reward' => null,
+        'session' => null,
         'total' => null,
         'user_uuid' => null,
         'voucher' => null
@@ -109,8 +117,12 @@ class Balance implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
+        'algorithm' => 'algorithm',
         'balance' => 'balance',
+        'ciphertext' => 'ciphertext',
+        'escrow' => 'escrow',
         'reward' => 'reward',
+        'session' => 'session',
         'total' => 'total',
         'user_uuid' => 'userUuid',
         'voucher' => 'voucher'
@@ -122,8 +134,12 @@ class Balance implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
+        'algorithm' => 'setAlgorithm',
         'balance' => 'setBalance',
+        'ciphertext' => 'setCiphertext',
+        'escrow' => 'setEscrow',
         'reward' => 'setReward',
+        'session' => 'setSession',
         'total' => 'setTotal',
         'user_uuid' => 'setUserUuid',
         'voucher' => 'setVoucher'
@@ -135,8 +151,12 @@ class Balance implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
+        'algorithm' => 'getAlgorithm',
         'balance' => 'getBalance',
+        'ciphertext' => 'getCiphertext',
+        'escrow' => 'getEscrow',
         'reward' => 'getReward',
+        'session' => 'getSession',
         'total' => 'getTotal',
         'user_uuid' => 'getUserUuid',
         'voucher' => 'getVoucher'
@@ -202,8 +222,12 @@ class Balance implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
+        $this->container['algorithm'] = $data['algorithm'] ?? null;
         $this->container['balance'] = $data['balance'] ?? null;
+        $this->container['ciphertext'] = $data['ciphertext'] ?? null;
+        $this->container['escrow'] = $data['escrow'] ?? null;
         $this->container['reward'] = $data['reward'] ?? null;
+        $this->container['session'] = $data['session'] ?? null;
         $this->container['total'] = $data['total'] ?? null;
         $this->container['user_uuid'] = $data['user_uuid'] ?? null;
         $this->container['voucher'] = $data['voucher'] ?? null;
@@ -234,6 +258,30 @@ class Balance implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
+     * Gets algorithm
+     *
+     * @return string|null
+     */
+    public function getAlgorithm()
+    {
+        return $this->container['algorithm'];
+    }
+
+    /**
+     * Sets algorithm
+     *
+     * @param string|null $algorithm algorithm
+     *
+     * @return self
+     */
+    public function setAlgorithm($algorithm)
+    {
+        $this->container['algorithm'] = $algorithm;
+
+        return $this;
+    }
+
+    /**
      * Gets balance
      *
      * @return float|null
@@ -258,6 +306,54 @@ class Balance implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets ciphertext
+     *
+     * @return string|null
+     */
+    public function getCiphertext()
+    {
+        return $this->container['ciphertext'];
+    }
+
+    /**
+     * Sets ciphertext
+     *
+     * @param string|null $ciphertext ciphertext
+     *
+     * @return self
+     */
+    public function setCiphertext($ciphertext)
+    {
+        $this->container['ciphertext'] = $ciphertext;
+
+        return $this;
+    }
+
+    /**
+     * Gets escrow
+     *
+     * @return float|null
+     */
+    public function getEscrow()
+    {
+        return $this->container['escrow'];
+    }
+
+    /**
+     * Sets escrow
+     *
+     * @param float|null $escrow escrow
+     *
+     * @return self
+     */
+    public function setEscrow($escrow)
+    {
+        $this->container['escrow'] = $escrow;
+
+        return $this;
+    }
+
+    /**
      * Gets reward
      *
      * @return float|null
@@ -277,6 +373,30 @@ class Balance implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setReward($reward)
     {
         $this->container['reward'] = $reward;
+
+        return $this;
+    }
+
+    /**
+     * Gets session
+     *
+     * @return string|null
+     */
+    public function getSession()
+    {
+        return $this->container['session'];
+    }
+
+    /**
+     * Sets session
+     *
+     * @param string|null $session session
+     *
+     * @return self
+     */
+    public function setSession($session)
+    {
+        $this->container['session'] = $session;
 
         return $this;
     }

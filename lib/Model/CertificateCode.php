@@ -1,6 +1,6 @@
 <?php
 /**
- * OutResponseOfstring
+ * CertificateCode
  *
  * PHP version 7.2
  *
@@ -33,7 +33,7 @@ use \ArrayAccess;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
- * OutResponseOfstring Class Doc Comment
+ * CertificateCode Class Doc Comment
  *
  * @category Class
  * @package  OpenAPI\Client
@@ -43,7 +43,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null  
  */
-class OutResponseOfstring implements ModelInterface, ArrayAccess, \JsonSerializable
+class CertificateCode implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -52,7 +52,7 @@ class OutResponseOfstring implements ModelInterface, ArrayAccess, \JsonSerializa
       *
       * @var string
       */
-    protected static $openAPIModelName = 'OutResponseOfstring';
+    protected static $openAPIModelName = 'CertificateCode';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -60,10 +60,15 @@ class OutResponseOfstring implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'code' => 'int',
-        'data' => 'string',
-        'msg' => 'string',
-        'success' => 'bool'
+        'code' => 'string',
+        'domain' => 'string',
+        'exchange' => '\DateTime',
+        'model' => 'string',
+        'quality' => 'int',
+        'query' => 'string',
+        'reserve' => 'bool',
+        'token' => 'string',
+        'udid' => 'string'
     ];
 
     /**
@@ -74,10 +79,15 @@ class OutResponseOfstring implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'code' => 'int32',
-        'data' => null,
-        'msg' => null,
-        'success' => null
+        'code' => null,
+        'domain' => null,
+        'exchange' => 'date-time',
+        'model' => null,
+        'quality' => 'int32',
+        'query' => null,
+        'reserve' => null,
+        'token' => null,
+        'udid' => null
     ];
 
     /**
@@ -108,9 +118,14 @@ class OutResponseOfstring implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     protected static $attributeMap = [
         'code' => 'code',
-        'data' => 'data',
-        'msg' => 'msg',
-        'success' => 'success'
+        'domain' => 'domain',
+        'exchange' => 'exchange',
+        'model' => 'model',
+        'quality' => 'quality',
+        'query' => 'query',
+        'reserve' => 'reserve',
+        'token' => 'token',
+        'udid' => 'udid'
     ];
 
     /**
@@ -120,9 +135,14 @@ class OutResponseOfstring implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     protected static $setters = [
         'code' => 'setCode',
-        'data' => 'setData',
-        'msg' => 'setMsg',
-        'success' => 'setSuccess'
+        'domain' => 'setDomain',
+        'exchange' => 'setExchange',
+        'model' => 'setModel',
+        'quality' => 'setQuality',
+        'query' => 'setQuery',
+        'reserve' => 'setReserve',
+        'token' => 'setToken',
+        'udid' => 'setUdid'
     ];
 
     /**
@@ -132,9 +152,14 @@ class OutResponseOfstring implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     protected static $getters = [
         'code' => 'getCode',
-        'data' => 'getData',
-        'msg' => 'getMsg',
-        'success' => 'getSuccess'
+        'domain' => 'getDomain',
+        'exchange' => 'getExchange',
+        'model' => 'getModel',
+        'quality' => 'getQuality',
+        'query' => 'getQuery',
+        'reserve' => 'getReserve',
+        'token' => 'getToken',
+        'udid' => 'getUdid'
     ];
 
     /**
@@ -198,9 +223,14 @@ class OutResponseOfstring implements ModelInterface, ArrayAccess, \JsonSerializa
     public function __construct(array $data = null)
     {
         $this->container['code'] = $data['code'] ?? null;
-        $this->container['data'] = $data['data'] ?? null;
-        $this->container['msg'] = $data['msg'] ?? null;
-        $this->container['success'] = $data['success'] ?? null;
+        $this->container['domain'] = $data['domain'] ?? null;
+        $this->container['exchange'] = $data['exchange'] ?? null;
+        $this->container['model'] = $data['model'] ?? null;
+        $this->container['quality'] = $data['quality'] ?? null;
+        $this->container['query'] = $data['query'] ?? null;
+        $this->container['reserve'] = $data['reserve'] ?? null;
+        $this->container['token'] = $data['token'] ?? null;
+        $this->container['udid'] = $data['udid'] ?? null;
     }
 
     /**
@@ -212,6 +242,9 @@ class OutResponseOfstring implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         $invalidProperties = [];
 
+        if ($this->container['token'] === null) {
+            $invalidProperties[] = "'token' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -230,7 +263,7 @@ class OutResponseOfstring implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets code
      *
-     * @return int|null
+     * @return string|null
      */
     public function getCode()
     {
@@ -240,7 +273,7 @@ class OutResponseOfstring implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets code
      *
-     * @param int|null $code code
+     * @param string|null $code 证书兑换码
      *
      * @return self
      */
@@ -252,73 +285,193 @@ class OutResponseOfstring implements ModelInterface, ArrayAccess, \JsonSerializa
     }
 
     /**
-     * Gets data
+     * Gets domain
      *
      * @return string|null
      */
-    public function getData()
+    public function getDomain()
     {
-        return $this->container['data'];
+        return $this->container['domain'];
     }
 
     /**
-     * Sets data
+     * Sets domain
      *
-     * @param string|null $data data
+     * @param string|null $domain 证书兑换系统的域名，请先在网站配置域名及其对应的API地址
      *
      * @return self
      */
-    public function setData($data)
+    public function setDomain($domain)
     {
-        $this->container['data'] = $data;
+        $this->container['domain'] = $domain;
 
         return $this;
     }
 
     /**
-     * Gets msg
+     * Gets exchange
      *
-     * @return string|null
+     * @return \DateTime|null
      */
-    public function getMsg()
+    public function getExchange()
     {
-        return $this->container['msg'];
+        return $this->container['exchange'];
     }
 
     /**
-     * Sets msg
+     * Sets exchange
      *
-     * @param string|null $msg msg
+     * @param \DateTime|null $exchange 兑换码完成兑换的时间
      *
      * @return self
      */
-    public function setMsg($msg)
+    public function setExchange($exchange)
     {
-        $this->container['msg'] = $msg;
+        $this->container['exchange'] = $exchange;
 
         return $this;
     }
 
     /**
-     * Gets success
+     * Gets model
+     *
+     * @return string|null
+     */
+    public function getModel()
+    {
+        return $this->container['model'];
+    }
+
+    /**
+     * Sets model
+     *
+     * @param string|null $model 设备型号:iPhone,iPad,iPod
+     *
+     * @return self
+     */
+    public function setModel($model)
+    {
+        $this->container['model'] = $model;
+
+        return $this;
+    }
+
+    /**
+     * Gets quality
+     *
+     * @return int|null
+     */
+    public function getQuality()
+    {
+        return $this->container['quality'];
+    }
+
+    /**
+     * Sets quality
+     *
+     * @param int|null $quality 默认为0:不质保,最大不能超过365天，该值仅作为参考，不作为依据，具体以上游系统为准
+     *
+     * @return self
+     */
+    public function setQuality($quality)
+    {
+        $this->container['quality'] = $quality;
+
+        return $this;
+    }
+
+    /**
+     * Gets query
+     *
+     * @return string|null
+     */
+    public function getQuery()
+    {
+        return $this->container['query'];
+    }
+
+    /**
+     * Sets query
+     *
+     * @param string|null $query 证书查询码
+     *
+     * @return self
+     */
+    public function setQuery($query)
+    {
+        $this->container['query'] = $query;
+
+        return $this;
+    }
+
+    /**
+     * Gets reserve
      *
      * @return bool|null
      */
-    public function getSuccess()
+    public function getReserve()
     {
-        return $this->container['success'];
+        return $this->container['reserve'];
     }
 
     /**
-     * Sets success
+     * Sets reserve
      *
-     * @param bool|null $success success
+     * @param bool|null $reserve 表示该兑换码是否是兑换的预定证书，该值仅作为参考，不作为依据，具体以上游系统为准
      *
      * @return self
      */
-    public function setSuccess($success)
+    public function setReserve($reserve)
     {
-        $this->container['success'] = $success;
+        $this->container['reserve'] = $reserve;
+
+        return $this;
+    }
+
+    /**
+     * Gets token
+     *
+     * @return string
+     */
+    public function getToken()
+    {
+        return $this->container['token'];
+    }
+
+    /**
+     * Sets token
+     *
+     * @param string $token 请求鉴权令牌
+     *
+     * @return self
+     */
+    public function setToken($token)
+    {
+        $this->container['token'] = $token;
+
+        return $this;
+    }
+
+    /**
+     * Gets udid
+     *
+     * @return string|null
+     */
+    public function getUdid()
+    {
+        return $this->container['udid'];
+    }
+
+    /**
+     * Sets udid
+     *
+     * @param string|null $udid 绑定设备的UDID，兑换时绑定
+     *
+     * @return self
+     */
+    public function setUdid($udid)
+    {
+        $this->container['udid'] = $udid;
 
         return $this;
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * OutResponseOfstringTest
+ * CertificateCodeTest
  *
  * PHP version 7.2
  *
@@ -32,15 +32,15 @@ namespace OpenAPI\Client\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * OutResponseOfstringTest Class Doc Comment
+ * CertificateCodeTest Class Doc Comment
  *
  * @category    Class
- * @description OutResponseOfstring
+ * @description CertificateCode
  * @package     OpenAPI\Client
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class OutResponseOfstringTest extends TestCase
+class CertificateCodeTest extends TestCase
 {
 
     /**
@@ -72,9 +72,9 @@ class OutResponseOfstringTest extends TestCase
     }
 
     /**
-     * Test "OutResponseOfstring"
+     * Test "CertificateCode"
      */
-    public function testOutResponseOfstring()
+    public function testCertificateCode()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -90,27 +90,72 @@ class OutResponseOfstringTest extends TestCase
     }
 
     /**
-     * Test attribute "data"
+     * Test attribute "domain"
      */
-    public function testPropertyData()
+    public function testPropertyDomain()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "msg"
+     * Test attribute "exchange"
      */
-    public function testPropertyMsg()
+    public function testPropertyExchange()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "success"
+     * Test attribute "model"
      */
-    public function testPropertySuccess()
+    public function testPropertyModel()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "quality"
+     */
+    public function testPropertyQuality()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "query"
+     */
+    public function testPropertyQuery()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "reserve"
+     */
+    public function testPropertyReserve()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "token"
+     */
+    public function testPropertyToken()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "udid"
+     */
+    public function testPropertyUdid()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

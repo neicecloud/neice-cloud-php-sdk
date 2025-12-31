@@ -1,6 +1,6 @@
 <?php
 /**
- * BalanceTest
+ * ResponseOfStatusTest
  *
  * PHP version 7.2
  *
@@ -32,15 +32,15 @@ namespace OpenAPI\Client\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * BalanceTest Class Doc Comment
+ * ResponseOfStatusTest Class Doc Comment
  *
  * @category    Class
- * @description Balance
+ * @description ResponseOfStatus
  * @package     OpenAPI\Client
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class BalanceTest extends TestCase
+class ResponseOfStatusTest extends TestCase
 {
 
     /**
@@ -72,9 +72,18 @@ class BalanceTest extends TestCase
     }
 
     /**
-     * Test "Balance"
+     * Test "ResponseOfStatus"
      */
-    public function testBalance()
+    public function testResponseOfStatus()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "action"
+     */
+    public function testPropertyAction()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -90,15 +99,6 @@ class BalanceTest extends TestCase
     }
 
     /**
-     * Test attribute "balance"
-     */
-    public function testPropertyBalance()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "ciphertext"
      */
     public function testPropertyCiphertext()
@@ -108,18 +108,45 @@ class BalanceTest extends TestCase
     }
 
     /**
-     * Test attribute "escrow"
+     * Test attribute "code"
      */
-    public function testPropertyEscrow()
+    public function testPropertyCode()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "reward"
+     * Test attribute "data"
      */
-    public function testPropertyReward()
+    public function testPropertyData()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "error"
+     */
+    public function testPropertyError()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "msg"
+     */
+    public function testPropertyMsg()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "result"
+     */
+    public function testPropertyResult()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -135,27 +162,9 @@ class BalanceTest extends TestCase
     }
 
     /**
-     * Test attribute "total"
+     * Test attribute "success"
      */
-    public function testPropertyTotal()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "user_uuid"
-     */
-    public function testPropertyUserUuid()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "voucher"
-     */
-    public function testPropertyVoucher()
+    public function testPropertySuccess()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

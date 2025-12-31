@@ -99,6 +99,15 @@ class PersonalCertificateTest extends TestCase
     }
 
     /**
+     * Test attribute "code"
+     */
+    public function testPropertyCode()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "create_time"
      */
     public function testPropertyCreateTime()
@@ -120,6 +129,33 @@ class PersonalCertificateTest extends TestCase
      * Test attribute "device_id"
      */
     public function testPropertyDeviceId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "experience"
+     */
+    public function testPropertyExperience()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "invisible"
+     */
+    public function testPropertyInvisible()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "lock"
+     */
+    public function testPropertyLock()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -165,6 +201,15 @@ class PersonalCertificateTest extends TestCase
      * Test attribute "price"
      */
     public function testPropertyPrice()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "profile"
+     */
+    public function testPropertyProfile()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -219,6 +264,42 @@ class PersonalCertificateTest extends TestCase
      * Test attribute "reserve"
      */
     public function testPropertyReserve()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "serial_number"
+     */
+    public function testPropertySerialNumber()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "tag"
+     */
+    public function testPropertyTag()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "team"
+     */
+    public function testPropertyTeam()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "team_id"
+     */
+    public function testPropertyTeamId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

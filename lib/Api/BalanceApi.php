@@ -123,7 +123,7 @@ class BalanceApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\OutResponseOfBalance
+     * @return \OpenAPI\Client\Model\ResponseOfBalance
      */
     public function getBalance()
     {
@@ -139,7 +139,7 @@ class BalanceApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\OutResponseOfBalance, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\ResponseOfBalance, HTTP status code, HTTP response headers (array of strings)
      */
     public function getBalanceWithHttpInfo()
     {
@@ -176,20 +176,20 @@ class BalanceApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\OutResponseOfBalance' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ResponseOfBalance' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\OutResponseOfBalance', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ResponseOfBalance', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\OutResponseOfBalance';
+            $returnType = '\OpenAPI\Client\Model\ResponseOfBalance';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -208,7 +208,7 @@ class BalanceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\OutResponseOfBalance',
+                        '\OpenAPI\Client\Model\ResponseOfBalance',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -248,7 +248,7 @@ class BalanceApi
      */
     public function getBalanceAsyncWithHttpInfo()
     {
-        $returnType = '\OpenAPI\Client\Model\OutResponseOfBalance';
+        $returnType = '\OpenAPI\Client\Model\ResponseOfBalance';
         $request = $this->getBalanceRequest();
 
         return $this->client

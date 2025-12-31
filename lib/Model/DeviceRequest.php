@@ -61,12 +61,17 @@ class DeviceRequest implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'callback' => 'string',
+        'code' => 'string',
+        'model' => 'string',
         'name' => 'string',
+        'param' => 'string',
         'phone' => 'string',
         'quality' => 'int',
         'refer' => 'string',
         'reserve' => 'bool',
-        'udid' => 'string'
+        'system' => 'string',
+        'udid' => 'string',
+        'version' => 'string'
     ];
 
     /**
@@ -78,12 +83,17 @@ class DeviceRequest implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'callback' => null,
+        'code' => null,
+        'model' => null,
         'name' => null,
+        'param' => null,
         'phone' => null,
         'quality' => 'int32',
         'refer' => null,
         'reserve' => null,
-        'udid' => null
+        'system' => null,
+        'udid' => null,
+        'version' => null
     ];
 
     /**
@@ -114,12 +124,17 @@ class DeviceRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'callback' => 'callback',
+        'code' => 'code',
+        'model' => 'model',
         'name' => 'name',
+        'param' => 'param',
         'phone' => 'phone',
         'quality' => 'quality',
         'refer' => 'refer',
         'reserve' => 'reserve',
-        'udid' => 'udid'
+        'system' => 'system',
+        'udid' => 'udid',
+        'version' => 'version'
     ];
 
     /**
@@ -129,12 +144,17 @@ class DeviceRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'callback' => 'setCallback',
+        'code' => 'setCode',
+        'model' => 'setModel',
         'name' => 'setName',
+        'param' => 'setParam',
         'phone' => 'setPhone',
         'quality' => 'setQuality',
         'refer' => 'setRefer',
         'reserve' => 'setReserve',
-        'udid' => 'setUdid'
+        'system' => 'setSystem',
+        'udid' => 'setUdid',
+        'version' => 'setVersion'
     ];
 
     /**
@@ -144,12 +164,17 @@ class DeviceRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'callback' => 'getCallback',
+        'code' => 'getCode',
+        'model' => 'getModel',
         'name' => 'getName',
+        'param' => 'getParam',
         'phone' => 'getPhone',
         'quality' => 'getQuality',
         'refer' => 'getRefer',
         'reserve' => 'getReserve',
-        'udid' => 'getUdid'
+        'system' => 'getSystem',
+        'udid' => 'getUdid',
+        'version' => 'getVersion'
     ];
 
     /**
@@ -213,12 +238,17 @@ class DeviceRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(array $data = null)
     {
         $this->container['callback'] = $data['callback'] ?? null;
+        $this->container['code'] = $data['code'] ?? null;
+        $this->container['model'] = $data['model'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
+        $this->container['param'] = $data['param'] ?? null;
         $this->container['phone'] = $data['phone'] ?? null;
         $this->container['quality'] = $data['quality'] ?? null;
         $this->container['refer'] = $data['refer'] ?? null;
         $this->container['reserve'] = $data['reserve'] ?? null;
+        $this->container['system'] = $data['system'] ?? null;
         $this->container['udid'] = $data['udid'] ?? null;
+        $this->container['version'] = $data['version'] ?? null;
     }
 
     /**
@@ -273,6 +303,54 @@ class DeviceRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets code
+     *
+     * @return string|null
+     */
+    public function getCode()
+    {
+        return $this->container['code'];
+    }
+
+    /**
+     * Sets code
+     *
+     * @param string|null $code 可使用兑换码注册设备
+     *
+     * @return self
+     */
+    public function setCode($code)
+    {
+        $this->container['code'] = $code;
+
+        return $this;
+    }
+
+    /**
+     * Gets model
+     *
+     * @return string|null
+     */
+    public function getModel()
+    {
+        return $this->container['model'];
+    }
+
+    /**
+     * Sets model
+     *
+     * @param string|null $model 兑换设备的手机型号，非必要参数
+     *
+     * @return self
+     */
+    public function setModel($model)
+    {
+        $this->container['model'] = $model;
+
+        return $this;
+    }
+
+    /**
      * Gets name
      *
      * @return string|null
@@ -292,6 +370,30 @@ class DeviceRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setName($name)
     {
         $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets param
+     *
+     * @return string|null
+     */
+    public function getParam()
+    {
+        return $this->container['param'];
+    }
+
+    /**
+     * Sets param
+     *
+     * @param string|null $param 额外透传参数，非必要参数
+     *
+     * @return self
+     */
+    public function setParam($param)
+    {
+        $this->container['param'] = $param;
 
         return $this;
     }
@@ -393,6 +495,30 @@ class DeviceRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets system
+     *
+     * @return string|null
+     */
+    public function getSystem()
+    {
+        return $this->container['system'];
+    }
+
+    /**
+     * Sets system
+     *
+     * @param string|null $system 兑换设备的系统，非必要参数
+     *
+     * @return self
+     */
+    public function setSystem($system)
+    {
+        $this->container['system'] = $system;
+
+        return $this;
+    }
+
+    /**
      * Gets udid
      *
      * @return string
@@ -412,6 +538,30 @@ class DeviceRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setUdid($udid)
     {
         $this->container['udid'] = $udid;
+
+        return $this;
+    }
+
+    /**
+     * Gets version
+     *
+     * @return string|null
+     */
+    public function getVersion()
+    {
+        return $this->container['version'];
+    }
+
+    /**
+     * Sets version
+     *
+     * @param string|null $version 兑换设备的客户端版本，非必要参数
+     *
+     * @return self
+     */
+    public function setVersion($version)
+    {
+        $this->container['version'] = $version;
 
         return $this;
     }

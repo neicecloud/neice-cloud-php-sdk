@@ -62,20 +62,29 @@ class PersonalCertificate implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $openAPITypes = [
         'certificate' => 'string',
         'certificate_id' => 'string',
+        'code' => 'string',
         'create_time' => 'string',
         'description' => 'string',
         'device_id' => 'string',
+        'experience' => 'int',
+        'invisible' => 'bool',
+        'lock' => 'int',
         'mobileprovision' => 'string',
         'name' => 'string',
         'password' => 'string',
         'phone' => 'string',
         'price' => 'float',
+        'profile' => 'string',
         'profile_id' => 'string',
         'quality' => 'int',
         'quality_time' => 'string',
         'refer' => 'string',
         'repair' => 'bool',
         'reserve' => 'bool',
+        'serial_number' => 'string',
+        'tag' => 'string',
+        'team' => 'string',
+        'team_id' => 'string',
         'udid' => 'string',
         'uuid' => 'string',
         'valid' => 'bool'
@@ -91,20 +100,29 @@ class PersonalCertificate implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $openAPIFormats = [
         'certificate' => null,
         'certificate_id' => null,
+        'code' => null,
         'create_time' => null,
         'description' => null,
         'device_id' => null,
+        'experience' => 'int32',
+        'invisible' => null,
+        'lock' => 'int32',
         'mobileprovision' => null,
         'name' => null,
         'password' => null,
         'phone' => null,
         'price' => null,
+        'profile' => null,
         'profile_id' => null,
         'quality' => 'int32',
         'quality_time' => null,
         'refer' => null,
         'repair' => null,
         'reserve' => null,
+        'serial_number' => null,
+        'tag' => null,
+        'team' => null,
+        'team_id' => null,
         'udid' => null,
         'uuid' => null,
         'valid' => null
@@ -139,20 +157,29 @@ class PersonalCertificate implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $attributeMap = [
         'certificate' => 'certificate',
         'certificate_id' => 'certificateId',
+        'code' => 'code',
         'create_time' => 'createTime',
         'description' => 'description',
         'device_id' => 'deviceId',
+        'experience' => 'experience',
+        'invisible' => 'invisible',
+        'lock' => 'lock',
         'mobileprovision' => 'mobileprovision',
         'name' => 'name',
         'password' => 'password',
         'phone' => 'phone',
         'price' => 'price',
+        'profile' => 'profile',
         'profile_id' => 'profileId',
         'quality' => 'quality',
         'quality_time' => 'qualityTime',
         'refer' => 'refer',
         'repair' => 'repair',
         'reserve' => 'reserve',
+        'serial_number' => 'serialNumber',
+        'tag' => 'tag',
+        'team' => 'team',
+        'team_id' => 'teamId',
         'udid' => 'udid',
         'uuid' => 'uuid',
         'valid' => 'valid'
@@ -166,20 +193,29 @@ class PersonalCertificate implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $setters = [
         'certificate' => 'setCertificate',
         'certificate_id' => 'setCertificateId',
+        'code' => 'setCode',
         'create_time' => 'setCreateTime',
         'description' => 'setDescription',
         'device_id' => 'setDeviceId',
+        'experience' => 'setExperience',
+        'invisible' => 'setInvisible',
+        'lock' => 'setLock',
         'mobileprovision' => 'setMobileprovision',
         'name' => 'setName',
         'password' => 'setPassword',
         'phone' => 'setPhone',
         'price' => 'setPrice',
+        'profile' => 'setProfile',
         'profile_id' => 'setProfileId',
         'quality' => 'setQuality',
         'quality_time' => 'setQualityTime',
         'refer' => 'setRefer',
         'repair' => 'setRepair',
         'reserve' => 'setReserve',
+        'serial_number' => 'setSerialNumber',
+        'tag' => 'setTag',
+        'team' => 'setTeam',
+        'team_id' => 'setTeamId',
         'udid' => 'setUdid',
         'uuid' => 'setUuid',
         'valid' => 'setValid'
@@ -193,20 +229,29 @@ class PersonalCertificate implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $getters = [
         'certificate' => 'getCertificate',
         'certificate_id' => 'getCertificateId',
+        'code' => 'getCode',
         'create_time' => 'getCreateTime',
         'description' => 'getDescription',
         'device_id' => 'getDeviceId',
+        'experience' => 'getExperience',
+        'invisible' => 'getInvisible',
+        'lock' => 'getLock',
         'mobileprovision' => 'getMobileprovision',
         'name' => 'getName',
         'password' => 'getPassword',
         'phone' => 'getPhone',
         'price' => 'getPrice',
+        'profile' => 'getProfile',
         'profile_id' => 'getProfileId',
         'quality' => 'getQuality',
         'quality_time' => 'getQualityTime',
         'refer' => 'getRefer',
         'repair' => 'getRepair',
         'reserve' => 'getReserve',
+        'serial_number' => 'getSerialNumber',
+        'tag' => 'getTag',
+        'team' => 'getTeam',
+        'team_id' => 'getTeamId',
         'udid' => 'getUdid',
         'uuid' => 'getUuid',
         'valid' => 'getValid'
@@ -274,20 +319,29 @@ class PersonalCertificate implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         $this->container['certificate'] = $data['certificate'] ?? null;
         $this->container['certificate_id'] = $data['certificate_id'] ?? null;
+        $this->container['code'] = $data['code'] ?? null;
         $this->container['create_time'] = $data['create_time'] ?? null;
         $this->container['description'] = $data['description'] ?? null;
         $this->container['device_id'] = $data['device_id'] ?? null;
+        $this->container['experience'] = $data['experience'] ?? null;
+        $this->container['invisible'] = $data['invisible'] ?? null;
+        $this->container['lock'] = $data['lock'] ?? null;
         $this->container['mobileprovision'] = $data['mobileprovision'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
         $this->container['password'] = $data['password'] ?? null;
         $this->container['phone'] = $data['phone'] ?? null;
         $this->container['price'] = $data['price'] ?? null;
+        $this->container['profile'] = $data['profile'] ?? null;
         $this->container['profile_id'] = $data['profile_id'] ?? null;
         $this->container['quality'] = $data['quality'] ?? null;
         $this->container['quality_time'] = $data['quality_time'] ?? null;
         $this->container['refer'] = $data['refer'] ?? null;
         $this->container['repair'] = $data['repair'] ?? null;
         $this->container['reserve'] = $data['reserve'] ?? null;
+        $this->container['serial_number'] = $data['serial_number'] ?? null;
+        $this->container['tag'] = $data['tag'] ?? null;
+        $this->container['team'] = $data['team'] ?? null;
+        $this->container['team_id'] = $data['team_id'] ?? null;
         $this->container['udid'] = $data['udid'] ?? null;
         $this->container['uuid'] = $data['uuid'] ?? null;
         $this->container['valid'] = $data['valid'] ?? null;
@@ -366,6 +420,30 @@ class PersonalCertificate implements ModelInterface, ArrayAccess, \JsonSerializa
     }
 
     /**
+     * Gets code
+     *
+     * @return string|null
+     */
+    public function getCode()
+    {
+        return $this->container['code'];
+    }
+
+    /**
+     * Sets code
+     *
+     * @param string|null $code 证书兑换码
+     *
+     * @return self
+     */
+    public function setCode($code)
+    {
+        $this->container['code'] = $code;
+
+        return $this;
+    }
+
+    /**
      * Gets create_time
      *
      * @return string|null
@@ -433,6 +511,78 @@ class PersonalCertificate implements ModelInterface, ArrayAccess, \JsonSerializa
     public function setDeviceId($device_id)
     {
         $this->container['device_id'] = $device_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets experience
+     *
+     * @return int|null
+     */
+    public function getExperience()
+    {
+        return $this->container['experience'];
+    }
+
+    /**
+     * Sets experience
+     *
+     * @param int|null $experience 允许用户体验的次数
+     *
+     * @return self
+     */
+    public function setExperience($experience)
+    {
+        $this->container['experience'] = $experience;
+
+        return $this;
+    }
+
+    /**
+     * Gets invisible
+     *
+     * @return bool|null
+     */
+    public function getInvisible()
+    {
+        return $this->container['invisible'];
+    }
+
+    /**
+     * Sets invisible
+     *
+     * @param bool|null $invisible 隐形证书
+     *
+     * @return self
+     */
+    public function setInvisible($invisible)
+    {
+        $this->container['invisible'] = $invisible;
+
+        return $this;
+    }
+
+    /**
+     * Gets lock
+     *
+     * @return int|null
+     */
+    public function getLock()
+    {
+        return $this->container['lock'];
+    }
+
+    /**
+     * Sets lock
+     *
+     * @param int|null $lock 锁定:0,不加锁;100,导出锁;200,体验锁;300,解码锁;400,付款锁;500,优惠锁;600,包月锁;700,续费锁;800,备份锁;10000,杀死锁
+     *
+     * @return self
+     */
+    public function setLock($lock)
+    {
+        $this->container['lock'] = $lock;
 
         return $this;
     }
@@ -553,6 +703,30 @@ class PersonalCertificate implements ModelInterface, ArrayAccess, \JsonSerializa
     public function setPrice($price)
     {
         $this->container['price'] = $price;
+
+        return $this;
+    }
+
+    /**
+     * Gets profile
+     *
+     * @return string|null
+     */
+    public function getProfile()
+    {
+        return $this->container['profile'];
+    }
+
+    /**
+     * Sets profile
+     *
+     * @param string|null $profile profile
+     *
+     * @return self
+     */
+    public function setProfile($profile)
+    {
+        $this->container['profile'] = $profile;
 
         return $this;
     }
@@ -697,6 +871,102 @@ class PersonalCertificate implements ModelInterface, ArrayAccess, \JsonSerializa
     public function setReserve($reserve)
     {
         $this->container['reserve'] = $reserve;
+
+        return $this;
+    }
+
+    /**
+     * Gets serial_number
+     *
+     * @return string|null
+     */
+    public function getSerialNumber()
+    {
+        return $this->container['serial_number'];
+    }
+
+    /**
+     * Sets serial_number
+     *
+     * @param string|null $serial_number serial_number
+     *
+     * @return self
+     */
+    public function setSerialNumber($serial_number)
+    {
+        $this->container['serial_number'] = $serial_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets tag
+     *
+     * @return string|null
+     */
+    public function getTag()
+    {
+        return $this->container['tag'];
+    }
+
+    /**
+     * Sets tag
+     *
+     * @param string|null $tag tag
+     *
+     * @return self
+     */
+    public function setTag($tag)
+    {
+        $this->container['tag'] = $tag;
+
+        return $this;
+    }
+
+    /**
+     * Gets team
+     *
+     * @return string|null
+     */
+    public function getTeam()
+    {
+        return $this->container['team'];
+    }
+
+    /**
+     * Sets team
+     *
+     * @param string|null $team team
+     *
+     * @return self
+     */
+    public function setTeam($team)
+    {
+        $this->container['team'] = $team;
+
+        return $this;
+    }
+
+    /**
+     * Gets team_id
+     *
+     * @return string|null
+     */
+    public function getTeamId()
+    {
+        return $this->container['team_id'];
+    }
+
+    /**
+     * Sets team_id
+     *
+     * @param string|null $team_id team_id
+     *
+     * @return self
+     */
+    public function setTeamId($team_id)
+    {
+        $this->container['team_id'] = $team_id;
 
         return $this;
     }

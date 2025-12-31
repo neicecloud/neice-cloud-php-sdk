@@ -90,9 +90,36 @@ class DeviceRequestTest extends TestCase
     }
 
     /**
+     * Test attribute "code"
+     */
+    public function testPropertyCode()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "model"
+     */
+    public function testPropertyModel()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "name"
      */
     public function testPropertyName()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "param"
+     */
+    public function testPropertyParam()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -135,9 +162,27 @@ class DeviceRequestTest extends TestCase
     }
 
     /**
+     * Test attribute "system"
+     */
+    public function testPropertySystem()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "udid"
      */
     public function testPropertyUdid()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "version"
+     */
+    public function testPropertyVersion()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

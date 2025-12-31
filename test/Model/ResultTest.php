@@ -1,6 +1,6 @@
 <?php
 /**
- * OutResponseOfBalanceTest
+ * ResultTest
  *
  * PHP version 7.2
  *
@@ -32,15 +32,15 @@ namespace OpenAPI\Client\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * OutResponseOfBalanceTest Class Doc Comment
+ * ResultTest Class Doc Comment
  *
  * @category    Class
- * @description OutResponseOfBalance
+ * @description Result
  * @package     OpenAPI\Client
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class OutResponseOfBalanceTest extends TestCase
+class ResultTest extends TestCase
 {
 
     /**
@@ -72,45 +72,18 @@ class OutResponseOfBalanceTest extends TestCase
     }
 
     /**
-     * Test "OutResponseOfBalance"
+     * Test "Result"
      */
-    public function testOutResponseOfBalance()
+    public function testResult()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "code"
+     * Test attribute "type"
      */
-    public function testPropertyCode()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "data"
-     */
-    public function testPropertyData()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "msg"
-     */
-    public function testPropertyMsg()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "success"
-     */
-    public function testPropertySuccess()
+    public function testPropertyType()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
